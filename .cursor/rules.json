@@ -1,0 +1,22 @@
+{
+  "os": "windows",
+  "shell": "powershell",
+  "packageManagerPolicy": "detect-lockfile-or-ask",
+  "qualityGates": [
+    "tests-must-pass",
+    "lighthouse-axe-green",
+    "reduced-motion-honored",
+    "no-server-only-on-static-paths"
+  ],
+  "animationPolicy": {
+    "parallax": "transform-only",
+    "reducedMotion": true
+  },
+  "stackPolicy": "do-not-lock-until-kickstart",
+  "changeBudgetPerSlice": 25,
+  "pathStyle": "forward-slashes",
+  "env": {
+    "useCrossEnv": true,
+    "useRimraf": true
+  }
+}

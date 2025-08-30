@@ -1,0 +1,43 @@
+{
+  "include": [
+    "README.md",
+    "DOCUMENTATION.md",
+    "docs/*.md",
+    "docs/decisions/**/*.md",
+    "docs/phases/**/*.md",
+    "docs/slices/**/*.md",
+    "smart_prompts/*.md",
+    "brand/*.md",
+    "brand/*.json",
+    "components/**/*.ts*",
+    "lib/**/*.ts*",
+    "styles/**/*.css",
+    "app/**/*.ts*",
+    "pages/**/*.ts*",
+    "tests/**/*.ts*",
+    "scripts/**/*.ts*",
+    "db/**/*.ts*",
+    "next.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.js",
+    "tsconfig.json",
+    "package.json",
+    "package-lock.json"
+  ],
+  "exclude": [
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "dist/**",
+    ".turbo/**",
+    ".vercel/**",
+    "coverage/**",
+    ".cache/**",
+    ".git/**",
+    "public/**",
+    "images/**",
+    "content_pages/**",
+    "**/*.{png,jpg,jpeg,webp,gif,svg,ico,pdf,psd,ai}",
+    "**/*.log"
+  ]
+}

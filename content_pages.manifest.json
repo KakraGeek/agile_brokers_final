@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2025-08-30",
+  "totalPages": 7,
+  "pages": [
+    {
+      "slug": "/",
+      "title": "Welcome to Agile Insurance Brokers Ltd",
+      "type": "home",
+      "order": 1,
+      "filePath": "content_pages/Home/homepage.md",
+      "hasBanner": false,
+      "description": "Company overview, vision, mission, and core values",
+      "sections": [
+        "company-intro",
+        "vision-mission",
+        "core-values"
+      ]
+    },
+    {
+      "slug": "/about-us",
+      "title": "About Us",
+      "type": "parent",
+      "order": 2,
+      "filePath": "content_pages/About Us/about_us.md",
+      "hasBanner": false,
+      "description": "Company description with navigation to sub-pages",
+      "subPages": [
+        {
+          "slug": "/about-us/services",
+          "title": "Our Services",
+          "filePath": "content_pages/About Us/our_services.md",
+          "order": 1
+        },
+        {
+          "slug": "/about-us/products",
+          "title": "Our Products",
+          "filePath": "content_pages/About Us/our_products.md",
+          "order": 2
+        },
+        {
+          "slug": "/about-us/team",
+          "title": "Our Team",
+          "filePath": "content_pages/About Us/our_team.md",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "slug": "/partners-clients",
+      "title": "Our Partners & Clients",
+      "type": "normal",
+      "order": 3,
+      "filePath": "content_pages/Our Partners & Clients/our_partners_and_clients.md",
+      "hasBanner": false,
+      "description": "Partner showcase and client testimonials"
+    },
+    {
+      "slug": "/contact",
+      "title": "Contact Us",
+      "type": "normal",
+      "order": 4,
+      "filePath": "content_pages/Contact Us/contact_us.md",
+      "hasBanner": false,
+      "description": "Contact information and form"
+    }
+  ],
+  "navigation": {
+    "main": [
+      { "label": "Home", "href": "/", "order": 1 },
+      { 
+        "label": "About Us", 
+        "href": "/about-us", 
+        "order": 2,
+        "hasDropdown": true,
+        "dropdownItems": [
+          { "label": "Our Services", "href": "/about-us/services" },
+          { "label": "Our Products", "href": "/about-us/products" },
+          { "label": "Our Team", "href": "/about-us/team" }
+        ]
+      },
+      { "label": "Partners & Clients", "href": "/partners-clients", "order": 3 },
+      { "label": "Contact", "href": "/contact", "order": 4 }
+    ]
+  }
+}

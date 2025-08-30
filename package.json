@@ -1,0 +1,55 @@
+{
+  "name": "agile-insurance-brokers",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modern, responsive website for Agile Insurance Brokers Ltd",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf .next out",
+    "preview": "npm run build && npm run export && npx http-server out -p 4173",
+    "test": "echo \"No tests specified yet\"",
+    "test:smoke": "npm run type-check && npm run lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/typography": "^0.5.16",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^10.16.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.292.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.31",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "npm"
+}

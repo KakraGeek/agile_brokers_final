@@ -1,0 +1,12 @@
+{
+  "lockedAt": "2025-08-30",
+  "projectType": "SPA Website",
+  "frontendStack": "Next.js + TypeScript",
+  "packageManager": "npm",
+  "backendStack": "None (static export)",
+  "database": "None (static content)",
+  "authentication": "None (static content)",
+  "deployment": "cPanel static upload",
+  "nodeVersion": "20.x LTS",
+  "documentationFile": "DOCUMENTATION.md"
+}

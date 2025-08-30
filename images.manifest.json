@@ -1,0 +1,262 @@
+{
+  "generatedAt": "2025-08-30",
+  "totalImages": 25,
+  "categories": {
+    "hero_slider": {
+      "count": 5,
+      "description": "Main banner images for homepage hero section",
+      "images": [
+        {
+          "filename": "1_new.webp",
+          "path": "images/hero_slider/1_new.webp",
+          "size": "99KB",
+          "dimensions": "347 lines",
+          "usage": "hero-banner",
+          "alt": "Hero Banner 1",
+          "order": 1
+        },
+        {
+          "filename": "2_new.webp",
+          "path": "images/hero_slider/2_new.webp",
+          "size": "310KB",
+          "dimensions": "1256 lines",
+          "usage": "hero-banner",
+          "alt": "Hero Banner 2",
+          "order": 2
+        },
+        {
+          "filename": "3_new.webp",
+          "path": "images/hero_slider/3_new.webp",
+          "size": "327KB",
+          "dimensions": "1271 lines",
+          "usage": "hero-banner",
+          "alt": "Hero Banner 3",
+          "order": 3
+        },
+        {
+          "filename": "4_new.webp",
+          "path": "images/hero_slider/4_new.webp",
+          "size": "339KB",
+          "dimensions": "1388 lines",
+          "usage": "hero-banner",
+          "alt": "Hero Banner 4",
+          "order": 4
+        },
+        {
+          "filename": "5_new.webp",
+          "path": "images/hero_slider/5_new.webp",
+          "size": "89KB",
+          "dimensions": "347 lines",
+          "usage": "hero-banner",
+          "alt": "Hero Banner 5",
+          "order": 5
+        }
+      ]
+    },
+    "partner_logos": {
+      "count": 4,
+      "description": "Official logos of partner organizations and government agencies",
+      "images": [
+        {
+          "filename": "stc-removebg-preview.png",
+          "path": "images/partner_logos/stc-removebg-preview.png",
+          "size": "17KB",
+          "dimensions": "73 lines",
+          "usage": "partner-logo",
+          "alt": "STC Logo",
+          "partner": "STC"
+        },
+        {
+          "filename": "ghana-police-logo-removebg-preview.png",
+          "path": "images/partner_logos/ghana-police-logo-removebg-preview.png",
+          "size": "113KB",
+          "dimensions": "506 lines",
+          "usage": "partner-logo",
+          "alt": "Ghana Police Logo",
+          "partner": "Ghana Police"
+        },
+        {
+          "filename": "fire_service-removebg-preview.png",
+          "path": "images/partner_logos/fire_service-removebg-preview.png",
+          "size": "175KB",
+          "dimensions": "708 lines",
+          "usage": "partner-logo",
+          "alt": "Fire Service Logo",
+          "partner": "Fire Service"
+        },
+        {
+          "filename": "DVLA-removebg-preview.png",
+          "path": "images/partner_logos/DVLA-removebg-preview.png",
+          "size": "290KB",
+          "dimensions": "1286 lines",
+          "usage": "partner-logo",
+          "alt": "DVLA Logo",
+          "partner": "DVLA"
+        }
+      ]
+    },
+    "product_images": {
+      "count": 13,
+      "description": "Insurance product illustrations and icons",
+      "images": [
+        {
+          "filename": "assets_all_risk.webp",
+          "path": "images/product_images/assets_all_risk.webp",
+          "usage": "product-icon",
+          "alt": "Assets All Risk Insurance"
+        },
+        {
+          "filename": "combined_fire_burglary.webp",
+          "path": "images/product_images/combined_fire_burglary.webp",
+          "usage": "product-icon",
+          "alt": "Combined Fire & Burglary Insurance"
+        },
+        {
+          "filename": "commercial_building_insurance.webp",
+          "path": "images/product_images/commercial_building_insurance.webp",
+          "usage": "product-icon",
+          "alt": "Commercial Building Insurance"
+        },
+        {
+          "filename": "goods_in_transit.webp",
+          "path": "images/product_images/goods_in_transit.webp",
+          "usage": "product-icon",
+          "alt": "Goods in Transit Insurance"
+        },
+        {
+          "filename": "group_life_comprehensive_plan.webp",
+          "path": "images/product_images/group_life_comprehensive_plan.webp",
+          "usage": "product-icon",
+          "alt": "Group Life Comprehensive Plan"
+        },
+        {
+          "filename": "health_insurance.webp",
+          "path": "images/product_images/health_insurance.webp",
+          "usage": "product-icon",
+          "alt": "Health Insurance"
+        },
+        {
+          "filename": "insurance_bonds_guarantees.webp",
+          "path": "images/product_images/insurance_bonds_guarantees.webp",
+          "usage": "product-icon",
+          "alt": "Insurance Bonds & Guarantees"
+        },
+        {
+          "filename": "marine_insurance.webp",
+          "path": "images/product_images/marine_insurance.webp",
+          "usage": "product-icon",
+          "alt": "Marine Insurance"
+        },
+        {
+          "filename": "motor_insurance.webp",
+          "path": "images/product_images/motor_insurance.webp",
+          "usage": "product-icon",
+          "alt": "Motor Insurance"
+        },
+        {
+          "filename": "professional_indemnity.webp",
+          "path": "images/product_images/professional_indemnity.webp",
+          "usage": "product-icon",
+          "alt": "Professional Indemnity Insurance"
+        },
+        {
+          "filename": "public_liability.webp",
+          "path": "images/product_images/public_liability.webp",
+          "usage": "product-icon",
+          "alt": "Public Liability Insurance"
+        },
+        {
+          "filename": "travel_insurance.webp",
+          "path": "images/product_images/travel_insurance.webp",
+          "usage": "product-icon",
+          "alt": "Travel Insurance"
+        },
+        {
+          "filename": "workmens_compensation.webp",
+          "path": "images/product_images/workmens_compensation.webp",
+          "usage": "product-icon",
+          "alt": "Workmen's Compensation Insurance"
+        }
+      ]
+    },
+    "banners": {
+      "count": 8,
+      "description": "Section banner images for different pages",
+      "images": [
+        {
+          "filename": "Banner2_0.webp",
+          "path": "images/banners/Banner2_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 2"
+        },
+        {
+          "filename": "Banner3_0.webp",
+          "path": "images/banners/Banner3_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 3"
+        },
+        {
+          "filename": "Banner4_0.webp",
+          "path": "images/banners/Banner4_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 4"
+        },
+        {
+          "filename": "Banner7_0.webp",
+          "path": "images/banners/Banner7_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 7"
+        },
+        {
+          "filename": "Banner8_0.webp",
+          "path": "images/banners/Banner8_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 8"
+        },
+        {
+          "filename": "Banner9_0.webp",
+          "path": "images/banners/Banner9_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 9"
+        },
+        {
+          "filename": "Banner10_0.webp",
+          "path": "images/banners/Banner10_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 10"
+        },
+        {
+          "filename": "Banner11_0.webp",
+          "path": "images/banners/Banner11_0.webp",
+          "usage": "section-banner",
+          "alt": "Section Banner 11"
+        }
+      ]
+    },
+    "home_images": {
+      "count": 2,
+      "description": "Specific images for homepage content sections",
+      "images": [
+        {
+          "filename": "burned_car_new.webp",
+          "path": "images/home_images/burned_car_new.webp",
+          "usage": "content-illustration",
+          "alt": "Burned Car - Insurance Claim Example"
+        },
+        {
+          "filename": "flood_cars_new.webp",
+          "path": "images/home_images/flood_cars_new.webp",
+          "usage": "content-illustration",
+          "alt": "Flood Damaged Cars - Insurance Claim Example"
+        }
+      ]
+    }
+  },
+  "usage": {
+    "hero": "images/hero_slider/*.webp",
+    "partners": "images/partner_logos/*.png",
+    "products": "images/product_images/*.webp",
+    "banners": "images/banners/*.webp",
+    "content": "images/home_images/*.webp"
+  }
+}
