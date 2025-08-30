@@ -71,18 +71,55 @@ export function Header() {
                 {navigationItems.map((item, index) => (
                   <NavigationMenuItem key={item.href} className="mx-1">
                     {item.hasDropdown ? (
-                      <div className="relative group">
+                      <div 
+                        className="relative group"
+                        onMouseEnter={() => {
+                          // Show dropdown when entering About Us area
+                          const dropdown = document.querySelector(`[data-dropdown="${item.label}"]`) as HTMLElement;
+                          if (dropdown) {
+                            dropdown.style.opacity = '1';
+                            dropdown.style.visibility = 'visible';
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          // Hide dropdown when leaving About Us area
+                          const dropdown = document.querySelector(`[data-dropdown="${item.label}"]`) as HTMLElement;
+                          if (dropdown) {
+                            dropdown.style.opacity = '0';
+                            dropdown.style.visibility = 'hidden';
+                          }
+                        }}
+                      >
                         {/* Main About Us Button - Clickable */}
                         <a
                           href={item.href}
-                          className="h-16 px-6 text-foreground hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-all duration-200 font-medium flex items-center cursor-pointer group"
+                          className="h-16 px-6 text-foreground hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-all duration-200 font-medium flex items-center cursor-pointer"
                         >
                           {item.label}
                           <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180" />
                         </a>
                         
                         {/* Dropdown Menu */}
-                        <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div 
+                          data-dropdown={item.label}
+                          className="absolute top-full left-0 mt-2 opacity-0 invisible transition-all duration-200 z-50"
+                          onMouseEnter={() => {
+                            // Keep dropdown visible when hovering over it
+                            const dropdown = document.querySelector(`[data-dropdown="${item.label}"]`) as HTMLElement;
+                            if (dropdown) {
+                              dropdown.style.opacity = '1';
+                              dropdown.style.visibility = 'visible';
+                            }
+                          }}
+                          onMouseLeave={() => {
+                            // Hide dropdown when leaving it
+                            const dropdown = document.querySelector(`[data-dropdown="${item.label}"]`) as HTMLElement;
+                            if (dropdown) {
+                              dropdown.style.opacity = '0';
+                              dropdown.style.visibility = 'hidden';
+                            }
+                          }}
+                        >
                           <motion.ul 
                             className="grid w-[400px] gap-3 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-lg border border-gray-100"
                             variants={dropdownVariants}
@@ -93,12 +130,12 @@ export function Header() {
                               <li key={dropdownItem.href}>
                                 <a
                                   href={dropdownItem.href}
-                                  className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-primary-50 hover:text-primary-900 focus:bg-primary-50 focus:text-primary-900 group"
+                                  className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-primary-50 hover:text-primary-900 focus:bg-primary-50 focus:text-primary-900"
                                 >
-                                  <div className="text-sm font-semibold leading-none group-hover:text-primary-900">
+                                  <div className="text-sm font-semibold leading-none hover:text-primary-900">
                                     {dropdownItem.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground group-hover:text-primary-700">
+                                  <div className="text-xs text-muted-foreground hover:text-primary-700">
                                     Learn more about our {dropdownItem.label.toLowerCase()}
                                   </div>
                                 </a>
