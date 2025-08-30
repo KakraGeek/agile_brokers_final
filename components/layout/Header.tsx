@@ -71,13 +71,18 @@ export function Header() {
                 {navigationItems.map((item, index) => (
                   <NavigationMenuItem key={item.href} className="mx-1">
                     {item.hasDropdown ? (
-                      <>
-                        <NavigationMenuTrigger className="h-16 px-6 text-foreground hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-all duration-200 font-medium flex items-center cursor-pointer group">
-                          <a href={item.href} className="flex items-center">
-                            {item.label}
-                          </a>
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
+                      <div className="relative group">
+                        {/* Main About Us Button - Clickable */}
+                        <a
+                          href={item.href}
+                          className="h-16 px-6 text-foreground hover:text-primary-900 hover:bg-primary-50 rounded-lg transition-all duration-200 font-medium flex items-center cursor-pointer group"
+                        >
+                          {item.label}
+                          <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:rotate-180" />
+                        </a>
+                        
+                        {/* Dropdown Menu */}
+                        <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                           <motion.ul 
                             className="grid w-[400px] gap-3 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-lg border border-gray-100"
                             variants={dropdownVariants}
@@ -86,24 +91,22 @@ export function Header() {
                           >
                             {item.dropdownItems?.map((dropdownItem) => (
                               <li key={dropdownItem.href}>
-                                <NavigationMenuLink asChild>
-                                  <a
-                                    href={dropdownItem.href}
-                                    className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-primary-50 hover:text-primary-900 focus:bg-primary-50 focus:text-primary-900 group"
-                                  >
-                                    <div className="text-sm font-semibold leading-none group-hover:text-primary-900">
-                                      {dropdownItem.label}
-                                    </div>
-                                    <div className="text-xs text-muted-foreground group-hover:text-primary-700">
-                                      Learn more about our {dropdownItem.label.toLowerCase()}
-                                    </div>
-                                  </a>
-                                </NavigationMenuLink>
+                                <a
+                                  href={dropdownItem.href}
+                                  className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-primary-50 hover:text-primary-900 focus:bg-primary-50 focus:text-primary-900 group"
+                                >
+                                  <div className="text-sm font-semibold leading-none group-hover:text-primary-900">
+                                    {dropdownItem.label}
+                                  </div>
+                                  <div className="text-xs text-muted-foreground group-hover:text-primary-700">
+                                    Learn more about our {dropdownItem.label.toLowerCase()}
+                                  </div>
+                                </a>
                               </li>
                             ))}
                           </motion.ul>
-                        </NavigationMenuContent>
-                      </>
+                        </div>
+                      </div>
                     ) : (
                       <NavigationMenuLink asChild>
                         <a

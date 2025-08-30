@@ -7,6 +7,9 @@ export { Footer } from './layout/Footer'
 export { PageLayout } from './content/PageLayout'
 export { MarkdownContent } from './content/MarkdownContent'
 
+// SEO Components
+export { SEOHead } from './seo/SEOHead'
+
 // UI Components (ShadCN)
 export { Button } from './ui/button'
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'

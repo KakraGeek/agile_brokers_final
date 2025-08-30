@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agilebrokersgh.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /out/
+
+# Allow important pages
+Allow: /about-us/
+Allow: /contact-us/
+Allow: /partners-clients/
+Allow: /brand/
+Allow: /images/

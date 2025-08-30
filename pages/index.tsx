@@ -24,6 +24,7 @@ import {
   cardIconFloat
 } from '@/lib/animations'
 import { Layout } from '@/components/layout/Layout'
+import { SEOHead } from '@/components/seo/SEOHead'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
@@ -65,7 +66,22 @@ export default function HomePage() {
   };
 
   return (
-    <Layout>
+    <>
+      <SEOHead 
+        page="home"
+        customKeywords={[
+          'insurance brokers ghana',
+          'professional insurance services',
+          'risk management ghana',
+          'insurance advisory ghana',
+          'comprehensive insurance solutions',
+          'no cost insurance brokerage',
+          'ghana insurance market',
+          'insurance consultation ghana'
+        ]}
+        customImage="/brand/Logo.png"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {/* Image Slider */}
@@ -464,5 +480,6 @@ export default function HomePage() {
         </div>
       </section>
     </Layout>
+    </>
   )
 }
