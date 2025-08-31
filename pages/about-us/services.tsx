@@ -154,16 +154,6 @@ export default function ServicesPage({ page }: ServicesPageProps) {
                     >
                       <IconComponent className={`w-6 h-6 text-${service.color === 'primary' ? 'primary' : service.color === 'secondary' ? 'secondary' : 'accent'}-600`} />
                     </motion.div>
-                    <motion.div
-                      variants={cardBadgePop}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                    >
-                      <Badge variant="outline" className="text-xs">
-                        Service {index + 1}
-                      </Badge>
-                    </motion.div>
                   </div>
                                       <motion.div variants={cardContentReveal}>
                       <CardTitle className="text-xl text-primary-900">

@@ -29,7 +29,7 @@ export default function PartnersClientsPage({ page }: PartnersClientsPageProps) 
       logo: '/images/partner_logos/ghana-police-logo-removebg-preview.png'
     },
     {
-      name: 'Ghana Fire Service', 
+      name: 'Ghana National Fire Service', 
       logo: '/images/partner_logos/fire_service-removebg-preview.png'
     },
     {
@@ -49,7 +49,7 @@ export default function PartnersClientsPage({ page }: PartnersClientsPageProps) 
     },
     {
       sector: 'Banking & Finance',
-      clients: ['Fiaseman Rural Bank Plc', 'Consolidated Bank Ghana']
+      clients: ['Fiaseman Rural Bank Plc', 'Consolidated Bank Ghana Ltd']
     },
     {
       sector: 'Printing & Publishing',

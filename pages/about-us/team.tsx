@@ -157,16 +157,6 @@ export default function TeamPage({ page }: TeamPageProps) {
                         <CardTitle className="text-2xl text-primary-900">
                           {member.name}
                         </CardTitle>
-                        <motion.div
-                          variants={cardBadgePop}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                        >
-                          <Badge variant="outline" className="text-xs">
-                            Member {index + 1}
-                          </Badge>
-                        </motion.div>
                       </div>
                       <CardDescription className="text-lg font-semibold text-accent-900">
                         {member.role}
