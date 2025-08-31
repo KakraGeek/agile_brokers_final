@@ -232,21 +232,31 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const page = await getContentBySlug('our_partners_and_clients')
     
-    if (!page) {
-      return {
-        notFound: true
-      }
+    // Provide fallback content if markdown is not available
+    const fallbackPage = {
+      slug: 'our_partners_and_clients',
+      title: 'Our Partners & Clients',
+      description: 'Building strong relationships with leading institutions and serving diverse sectors across Ghana',
+      content: ''
     }
 
     return {
       props: {
-        page
+        page: page || fallbackPage
       }
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
+    // Return fallback content instead of notFound
     return {
-      notFound: true
+      props: {
+        page: {
+          slug: 'our_partners_and_clients',
+          title: 'Our Partners & Clients',
+          description: 'Building strong relationships with leading institutions and serving diverse sectors across Ghana',
+          content: ''
+        }
+      }
     }
   }
 }

@@ -299,28 +299,39 @@ export const getStaticProps: GetStaticProps = async () => {
     // Get the main About Us page
     const page = await getContentBySlug('about_us')
     
-    if (!page) {
-      return {
-        notFound: true
-      }
+    // Provide fallback content if markdown is not available
+    const fallbackPage = {
+      slug: 'about_us',
+      title: 'About Us',
+      description: 'Learn more about Agile Insurance Brokers Ltd',
+      content: ''
     }
 
     // Get sub-pages
     const allPages = await getAllContentPages()
-    const subPages = allPages.filter(p => 
+    const subPages = allPages ? allPages.filter(p => 
       ['our_services', 'our_products', 'our_team'].includes(p.slug)
-    )
+    ) : []
 
     return {
       props: {
-        page,
+        page: page || fallbackPage,
         subPages
       }
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
+    // Return fallback content instead of notFound
     return {
-      notFound: true
+      props: {
+        page: {
+          slug: 'about_us',
+          title: 'About Us',
+          description: 'Learn more about Agile Insurance Brokers Ltd',
+          content: ''
+        },
+        subPages: []
+      }
     }
   }
 }

@@ -399,21 +399,31 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const page = await getContentBySlug('contact_us')
     
-    if (!page) {
-      return {
-        notFound: true
-      }
+    // Provide fallback content if markdown is not available
+    const fallbackPage = {
+      slug: 'contact_us',
+      title: 'Contact Us',
+      description: 'Get in touch with our team for personalized insurance solutions',
+      content: ''
     }
 
     return {
       props: {
-        page
+        page: page || fallbackPage
       }
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
+    // Return fallback content instead of notFound
     return {
-      notFound: true
+      props: {
+        page: {
+          slug: 'contact_us',
+          title: 'Contact Us',
+          description: 'Get in touch with our team for personalized insurance solutions',
+          content: ''
+        }
+      }
     }
   }
 }

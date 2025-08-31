@@ -304,21 +304,31 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const page = await getContentBySlug('our_products')
     
-    if (!page) {
-      return {
-        notFound: true
-      }
+    // Provide fallback content if markdown is not available
+    const fallbackPage = {
+      slug: 'our_products',
+      title: 'Our Products',
+      description: 'Comprehensive insurance products designed to protect what matters most',
+      content: ''
     }
 
     return {
       props: {
-        page
+        page: page || fallbackPage
       }
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
+    // Return fallback content instead of notFound
     return {
-      notFound: true
+      props: {
+        page: {
+          slug: 'our_products',
+          title: 'Our Products',
+          description: 'Comprehensive insurance products designed to protect what matters most',
+          content: ''
+        }
+      }
     }
   }
 }

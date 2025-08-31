@@ -228,21 +228,31 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const page = await getContentBySlug('our_services')
     
-    if (!page) {
-      return {
-        notFound: true
-      }
+    // Provide fallback content if markdown is not available
+    const fallbackPage = {
+      slug: 'our_services',
+      title: 'Our Services',
+      description: 'Professional insurance brokerage services designed to enhance your risk management strategies',
+      content: ''
     }
 
     return {
       props: {
-        page
+        page: page || fallbackPage
       }
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
+    // Return fallback content instead of notFound
     return {
-      notFound: true
+      props: {
+        page: {
+          slug: 'our_services',
+          title: 'Our Services',
+          description: 'Professional insurance brokerage services designed to enhance your risk management strategies',
+          content: ''
+        }
+      }
     }
   }
 }
