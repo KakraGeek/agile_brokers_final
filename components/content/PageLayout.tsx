@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Layout } from '@/components/layout/Layout'
 import { MarkdownContent } from './MarkdownContent'
 import { Button } from '@/components/ui/button'
+import { ResponsiveBanner } from '@/components/ui/ResponsiveBanner'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { fadeIn, slideUp } from '@/lib/animations'
@@ -39,33 +40,12 @@ export function PageLayout({
     <Layout>
       {/* Banner Section */}
       {hasBanner && bannerImage && (
-        <motion.section 
-          className="relative h-64 md:h-80 lg:h-96 overflow-hidden"
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible"
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ 
-              backgroundImage: `url(${bannerImage})`,
-              backgroundAttachment: 'fixed'
-            }}
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="relative z-10 flex items-center justify-center h-full">
-            <div className="text-center text-white">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                {title}
-              </h1>
-              {description && (
-                <p className="text-xl md:text-2xl max-w-3xl mx-auto px-4">
-                  {description}
-                </p>
-              )}
-            </div>
-          </div>
-        </motion.section>
+        <ResponsiveBanner
+          bannerImage={bannerImage}
+          bannerAlt={bannerAlt}
+          title={title}
+          description={description}
+        />
       )}
 
       {/* Content Section */}

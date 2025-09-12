@@ -112,7 +112,7 @@ export function FloatingActionButton({
       >
         <Button
           onClick={toggleExpanded}
-          className="w-14 h-14 md:w-16 md:h-16 bg-[#110273] hover:bg-[#0D0159] text-white shadow-lg hover:shadow-xl transition-all duration-200 rounded-full flex items-center justify-center"
+          className="w-12 h-20 md:w-14 md:h-24 bg-[#110273] hover:bg-[#0D0159] text-white shadow-lg hover:shadow-xl transition-all duration-200 rounded-full flex items-center justify-center"
           size="icon"
           aria-label={isExpanded ? "Close communication options" : "Open communication options"}
           title={isExpanded ? "Close communication options" : "Open communication options"}
@@ -135,11 +135,11 @@ export function FloatingActionButton({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center gap-0.5"
+                className="flex flex-col items-center gap-3 md:gap-4 py-3 md:py-4"
               >
-                <Phone className="w-3 h-3 md:w-4 md:h-4" />
-                <Mail className="w-3 h-3 md:w-4 md:h-4" />
-                <MessageCircle className="w-3 h-3 md:w-4 md:h-4" />
+                <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </motion.div>
             )}
           </AnimatePresence>

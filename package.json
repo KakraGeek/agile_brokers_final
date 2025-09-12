@@ -7,13 +7,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "clean": "rimraf .next out",
-    "preview": "npm run build && npm run export && npx http-server out -p 4173",
+    "preview": "npm run build && npx http-server out -p 4173",
     "test": "echo \"No tests specified yet\"",
-    "test:smoke": "npm run type-check && npm run lint"
+    "test:smoke": "npm run type-check && npm run lint",
+    "deploy": "node deploy.js",
+    "deploy:build": "npm run build",
+    "deploy:vercel": "node deploy-vercel.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

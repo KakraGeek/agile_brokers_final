@@ -20,6 +20,8 @@ export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 export { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from './ui/navigation-menu'
 export { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet'
 export { FloatingActionButton } from './ui/FloatingActionButton'
+export { ResponsiveBanner } from './ui/ResponsiveBanner'
+export { ResponsiveHeroSlider } from './ui/ResponsiveHeroSlider'
 
 // Re-export utilities
 export { cn } from '@/lib/utils'
