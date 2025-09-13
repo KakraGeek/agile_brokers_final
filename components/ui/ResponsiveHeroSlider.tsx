@@ -5,12 +5,20 @@ import { fadeIn } from '@/lib/animations'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
+interface SlideContent {
+  title?: string
+  description?: string
+}
+
 interface ResponsiveHeroSliderProps {
   images: string[]
   autoPlayInterval?: number
   showControls?: boolean
   showProgress?: boolean
   showDots?: boolean
+  // Text overlay support - can be single content or array for each slide
+  slideContent?: SlideContent | SlideContent[]
+  showTextOverlay?: boolean
 }
 
 export function ResponsiveHeroSlider({ 
@@ -18,7 +26,10 @@ export function ResponsiveHeroSlider({
   autoPlayInterval = 5000,
   showControls = true,
   showProgress = true,
-  showDots = true
+  showDots = true,
+  // Text overlay props
+  slideContent,
+  showTextOverlay = true
 }: ResponsiveHeroSliderProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -120,9 +131,47 @@ export function ResponsiveHeroSlider({
         })}
       </div>
 
+      {/* Text Overlay */}
+      {showTextOverlay && slideContent && (() => {
+        // Get current slide content
+        const currentContent = Array.isArray(slideContent) 
+          ? slideContent[currentImageIndex] || slideContent[0]
+          : slideContent
+        
+        return currentContent && (currentContent.title || currentContent.description) ? (
+          <>
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40 z-10" />
+            
+            {/* Text Content */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center">
+              <motion.div 
+                className="text-center text-white px-4 max-w-4xl mx-auto"
+                variants={fadeIn}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                key={currentImageIndex} // Re-animate when slide changes
+              >
+                {currentContent.title && (
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+                    {currentContent.title}
+                  </h1>
+                )}
+                {currentContent.description && (
+                  <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    {currentContent.description}
+                  </p>
+                )}
+              </motion.div>
+            </div>
+          </>
+        ) : null
+      })()}
+
       {/* Progress Bar */}
       {showProgress && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-black/20 z-20">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-black/20 z-30">
           <motion.div
             className="h-full bg-white"
             initial={{ width: "0%" }}
@@ -135,7 +184,7 @@ export function ResponsiveHeroSlider({
       
       {/* Navigation Dots */}
       {showDots && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
           {images.map((_, index) => (
             <button
               key={index}
@@ -155,7 +204,7 @@ export function ResponsiveHeroSlider({
       {showControls && (
         <button
           onClick={() => setIsPaused(!isPaused)}
-          className="absolute bottom-8 left-8 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-20 group"
+          className="absolute bottom-8 left-8 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-30 group"
           aria-label={isPaused ? "Resume slideshow" : "Pause slideshow"}
         >
           {isPaused ? (
@@ -175,7 +224,7 @@ export function ResponsiveHeroSlider({
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-20 group"
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-30 group"
             aria-label="Previous slide"
           >
             <svg className="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,7 +234,7 @@ export function ResponsiveHeroSlider({
 
           <button
             onClick={goToNext}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-20 group"
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-all duration-300 z-30 group"
             aria-label="Next slide"
           >
             <svg className="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +246,7 @@ export function ResponsiveHeroSlider({
 
       {/* Slide Counter */}
       {showControls && (
-        <div className="absolute top-8 right-8 bg-black/30 text-white px-4 py-2 rounded-full text-sm font-medium z-20">
+        <div className="absolute top-8 right-8 bg-black/30 text-white px-4 py-2 rounded-full text-sm font-medium z-30">
           {currentImageIndex + 1} / {images.length}
         </div>
       )}

@@ -39,6 +39,30 @@ export default function HomePage() {
     '/images/hero_slider/5_new.webp'
   ]
 
+  // Different text content for each slide
+  const heroSlideContent = [
+    {
+      title: "Welcome to Agile Insurance Brokers Ltd",
+      description: "Professional insurance brokerage services in Ghana, providing peace of mind through sound insurance and exceptional service"
+    },
+    {
+      title: "Comprehensive Insurance Solutions",
+      description: "From motor vehicles to professional liability, we offer complete coverage tailored to your needs"
+    },
+    {
+      title: "Expert Risk Management",
+      description: "Our experienced team provides strategic risk assessment and management solutions for businesses nationwide"
+    },
+    {
+      title: "NO COST TO YOU",
+      description: "Our brokerage services come at no cost to you, designed to enhance your risk management strategies"
+    },
+    {
+      title: "Trusted Since 2019",
+      description: "Licensed under Companies Act 2019 (Act 992), serving clients across Ghana with integrity and excellence"
+    }
+  ]
+
   const coreValues = [
     { icon: Award, title: 'Excellence', description: 'Delivering the highest quality service' },
     { icon: Shield, title: 'Integrity', description: 'Building trust through honest practices' },
@@ -66,7 +90,11 @@ export default function HomePage() {
       />
       <Layout>
       {/* Hero Section */}
-      <ResponsiveHeroSlider images={heroImages} />
+      <ResponsiveHeroSlider 
+        images={heroImages}
+        slideContent={heroSlideContent}
+        showTextOverlay={true}
+      />
 
       {/* Company Introduction Section */}
       <section className="py-16 bg-white">
