@@ -44,9 +44,9 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/1PMfh4PNgG/', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/agile-insurance-brokers-817b47357', label: 'LinkedIn' },
     { icon: Instagram, href: '#', label: 'Instagram' }
   ]
 
@@ -150,6 +150,7 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="text-secondary-400 hover:text-primary-400 transition-all duration-200 hover:scale-110"
                   aria-label={social.label}
                 >
